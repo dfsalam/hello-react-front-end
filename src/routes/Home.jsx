@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Greeting from '../components/Greeting';
+import GreetingContainer from '../components/GreetingContainer';
 import { getGreetings } from '../redux/greetings/greetingsSlice';
 
 const Home = () => {
@@ -22,9 +22,9 @@ const Home = () => {
     );
   }
   return (
-    <div className="root_container">
-      <Greeting />
-    </div>
+    
+    <GreetingContainer />
+    
   );
 };
 
