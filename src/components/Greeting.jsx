@@ -1,11 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Greeting = ({message}) => {  
-  return (
-    <div>
-      {message}
-    </div>
-  );
+const Greeting = ({ message }) => (
+  <div>
+    {message}
+  </div>
+);
+
+Greeting.propTypes = {
+  message: PropTypes.string.isRequired,
 };
 
 export default Greeting;

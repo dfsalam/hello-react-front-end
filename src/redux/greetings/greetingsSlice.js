@@ -11,7 +11,6 @@ export const getGreetings = createAsyncThunk('greetings/getGreetings',
     try {
       const response = await fetch(URL);
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (error) {
       return error.message();
@@ -36,7 +35,7 @@ const greetingsSlice = createSlice({
       .addCase(getGreetings.rejected, (state, action) => ({
         ...state,
         isLoading: false,
-        error: action.error.message
+        error: action.error.message,
       }));
   },
 });
