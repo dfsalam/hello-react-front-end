@@ -36,7 +36,7 @@
 # 📖 About <a name="about"></a>
 
 **Hello-react-front-end** is a website to implement a connection between a Ruby on Rails back-end and React front-end.
-<a href="https://github.com/dfsalam/hello-react-back-end">Link to the front-end repo</a>
+<a href="https://github.com/dfsalam/hello-rails-back-end">Link to the back-end repo</a>
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
