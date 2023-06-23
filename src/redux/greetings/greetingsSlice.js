@@ -1,16 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const initialState = {
-  greetings: [],  
+  greetings: [],
   isLoading: false,
   errors: null,
 };
-const URL = 'http://localhost:3000/api/v1/greetings';
+const URL = 'http://127.0.0.1:3000/api/v1/greetings';
 export const getGreetings = createAsyncThunk('greetings/getGreetings',
-  async () => {   
+  async () => {
     try {
       const response = await fetch(URL);
       const data = await response.json();
+      console.log(data);
       return data;
     } catch (error) {
       return error.message();
@@ -22,7 +23,7 @@ const greetingsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder     
+    builder
       .addCase(getGreetings.pending, (state) => ({
         ...state,
         isLoading: true,
@@ -32,9 +33,10 @@ const greetingsSlice = createSlice({
         isLoading: false,
         greetings: action.payload,
       }))
-      .addCase(getGreetings.rejected, (state) => ({
+      .addCase(getGreetings.rejected, (state, action) => ({
         ...state,
         isLoading: false,
+        error: action.error.message
       }));
   },
 });
